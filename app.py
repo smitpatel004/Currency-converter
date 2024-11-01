@@ -1,11 +1,13 @@
 from flask import Flask,request,jsonify
 import requests
 from dotenv import load_dotenv
+from flask_cors import CORS
 import os
 
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/',methods=['POST'])
 def index():
